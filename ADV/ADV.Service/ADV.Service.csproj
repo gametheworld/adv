@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE81E4EA-49B5-4C0F-BA23-738CF96AECB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ADV.Service</RootNamespace>
+    <AssemblyName>ADV.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Channel\adv_c_ChanelService.cs" />
+    <Compile Include="DBResultInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ADV.DB.Base\ADV.DB.Base.csproj">
+      <Project>{8d3dd619-d7fa-43e1-9879-cfddefe05258}</Project>
+      <Name>ADV.DB.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ADV.DB.Tools\ADV.DB.Tools.csproj">
+      <Project>{d93d5f1e-bf5d-405a-b2ca-be5a0bfb1dc2}</Project>
+      <Name>ADV.DB.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ADV.Entity\ADV.Entity.csproj">
+      <Project>{6f18883d-45f5-41eb-b89d-a874ea89e542}</Project>
+      <Name>ADV.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ADV.ORM.Extensions\ADV.ORM.Extensions.csproj">
+      <Project>{777279b1-9a1a-4f91-b33d-a220e320de3c}</Project>
+      <Name>ADV.ORM.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ADV.Util\ADV.Util.csproj">
+      <Project>{2d63d673-a7cb-43d9-88a8-1cae4c3baf60}</Project>
+      <Name>ADV.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
